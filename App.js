@@ -1,10 +1,10 @@
-import {createStackNavigator} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 
-import Home from './screens/home';
 import Details from './screens/details';
+import Home from './screens/home';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function App(){
   return (
@@ -17,7 +17,6 @@ export default function App(){
         name='Details'
         component={Details}
         >
-          
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
