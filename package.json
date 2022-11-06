@@ -10,8 +10,16 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-navigation/native-stack": "^6.9.1",
+    "@react-navigation/stack": "^6.3.4",
+    "firebase": "^9.13.0",
+    "npm-install-all": "^1.1.21",
     "react": "18.1.0",
-    "react-native": "0.70.4"
+    "react-native": "0.70.4",
+    "react-native-dotenv": "^3.3.1",
+    "react-native-safe-area-context": "^4.4.1",
+    "react-native-screens": "^3.18.2",
+    "react-navigation": "^4.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
