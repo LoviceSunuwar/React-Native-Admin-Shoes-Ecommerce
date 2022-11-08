@@ -1,8 +1,8 @@
 import { View, Text, FlatList, StyleSheet, TextInput, TouchableOpacity, Keyboard } from 'react-native' // Mught have to add pressable
  
-import React, { useState, useEffect} from 'react'
-import { firebase } from '.firebase/firebaseConfig';
-import { fontAwesome } from '@expo/vector-icons';
+import React, { useState, useEffect} from 'react';
+
+import { firebase } from '../firebase/firebaseConfig';
 import { useNavigation } from '@react-navigation/native'
 import { QuerySnapshot } from 'firebase/firestore';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
@@ -17,7 +17,7 @@ const Home = () => {
         shoesRef
         .orderBy('createdAt', 'desc') //<< there might be a change here keep a note 
         .onSnapshot(
-            QuerySnapshot => {
+            querySnapshot => {
                 const shoes = []
                 QuerySnapshot.forEach((doc) => {
                     const {heading} = doc.data()
@@ -95,7 +95,7 @@ const Home = () => {
                 autoCapitalize = 'none' />
                 
 
-            <TouchableOpacity style={Styles.button} onPress={addShoes}></TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={addShoes}></TouchableOpacity>
             <Text style = {styles.buttonText}>
                 Add
             </Text>
@@ -108,7 +108,7 @@ const Home = () => {
                 <View>
                     <Pressable
                         // Making the flatlist pressable so that we can navigate to the details page
-                        style={style.container}
+                        style={styles.container}
                         onPress={() => navigation.navigate('Details', {item})}
                     >
 
@@ -116,7 +116,7 @@ const Home = () => {
                             name = 'trash-o'
                             color='red'
                             onPress = {() => deleteShoes(item)}
-                            style={styles.todoIcon}
+                            style={styles.shoesIcon}
                         />
 
                         <View
