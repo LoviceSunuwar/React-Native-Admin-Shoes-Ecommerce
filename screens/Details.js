@@ -1,8 +1,8 @@
-import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native'
+import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native';
 
-import React , { useState } from 'react'
-import {firebase} from '../firebase/firebaseConfig'
-import {useNavigation} from '@react-navigation/native'
+import React , { useState } from 'react';
+import {firebase} from '../firebase/firebaseConfig';
+import {useNavigation} from '@react-navigation/native';
 
 
 
@@ -63,7 +63,12 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       paddingVertical: 12,
+      paddingHorizontal: 32,
+      borderRadius: 4,
+      elevation: 10,
+      backgroundColor:'#0de065',
       
 
     }
+
 })
